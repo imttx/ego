@@ -85,7 +85,7 @@ func (fs *FlagSet) Parse() error {
 		return err
 	}
 
-	// 遍历所欲flagset数据
+	// 遍历所有 flagset 数据
 	fs.FlagSet.Visit(func(f *flag.Flag) {
 		if action, ok := fs.actions[f.Name]; ok && action != nil {
 			action(f.Name, fs)

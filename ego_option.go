@@ -8,7 +8,7 @@ import (
 // Option 可选项
 type Option func(a *Ego)
 
-// WithHang 是否允许系统悬挂起来，0 表示不悬挂， 1 表示悬挂。目的是一些脚本操作的时候，不想主线程停止
+// WithHang 是否允许系统悬挂起来，false 表示不悬挂，true 表示悬挂。目的是一些脚本操作的时候，不想主线程停止
 func WithHang(flag bool) Option {
 	return func(a *Ego) {
 		a.opts.hang = flag
